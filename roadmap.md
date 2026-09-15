@@ -1,0 +1,5 @@
+- [ ] Build shared visual system and navigation
+- [ ] Build responsive home page
+- [ ] Build separate work gallery
+- [ ] Add Mona portrait and recover available real portfolio artwork
+- [ ] Verify desktop and mobile
