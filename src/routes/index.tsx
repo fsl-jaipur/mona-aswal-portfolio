@@ -57,7 +57,7 @@ function Index() {
     <div className="min-h-screen overflow-x-hidden text-ink">
       <Header />
       <main>
-        <section className="relative mx-auto grid min-h-[calc(100svh-72px)] max-w-[1600px] grid-cols-12 items-end gap-4 px-5 pb-16 pt-8 sm:px-8 lg:gap-8 lg:px-14 lg:pb-24">
+        <section className="relative mx-auto grid min-h-[calc(100svh-72px)] max-w-[1600px] grid-cols-12 items-center gap-4 px-5 pb-16 pt-8 sm:px-8 lg:gap-8 lg:px-14 lg:pb-20">
           <div aria-hidden="true" className="paper-glass animate-paper absolute -left-24 top-24 h-[28rem] w-56 border border-paper/80" />
           <div aria-hidden="true" className="paper-glass animate-paper absolute -right-20 top-52 h-[30rem] w-60 border border-paper/80 [animation-delay:-3s]" />
           <div className="relative z-10 col-span-12 pb-8 md:col-span-7 md:pb-0">
