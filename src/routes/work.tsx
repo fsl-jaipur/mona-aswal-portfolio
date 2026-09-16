@@ -1,5 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, Mail } from "lucide-react";
+import packagingMotion from "@/assets/portfolio/packaging-motion.gif.asset.json";
+import packagingBrand from "@/assets/portfolio/packaging-brand.jpg.asset.json";
+import ecommerceRetail from "@/assets/portfolio/ecommerce-retail.jpg.asset.json";
+import ecommerceShowcase from "@/assets/portfolio/ecommerce-showcase.jpg.asset.json";
+import campaignLifestyle from "@/assets/portfolio/campaign-lifestyle.jpg.asset.json";
+import campaignStorytelling from "@/assets/portfolio/campaign-storytelling.jpg.asset.json";
+import identitySystem from "@/assets/portfolio/identity-system.jpg.asset.json";
+import identityElement from "@/assets/portfolio/identity-element.jpg.asset.json";
 
 export const Route = createFileRoute("/work")({
   head: () => ({
@@ -16,12 +24,14 @@ export const Route = createFileRoute("/work")({
 });
 
 const archive = [
-  ["Packaging", "bg-coral", "aspect-[4/5]"],
-  ["E-commerce", "bg-violet", "aspect-square"],
-  ["Brand identity", "bg-raspberry", "aspect-[5/4]"],
-  ["Campaigns", "bg-plum", "aspect-[3/4]"],
-  ["Print", "bg-violet", "aspect-[4/3]"],
-  ["Packaging systems", "bg-coral", "aspect-square"],
+  { category: "Packaging", image: packagingMotion, ratio: "aspect-[4/5]" },
+  { category: "E-commerce", image: ecommerceRetail, ratio: "aspect-square" },
+  { category: "Brand identity", image: identitySystem, ratio: "aspect-[5/4]" },
+  { category: "Campaigns", image: campaignLifestyle, ratio: "aspect-[3/4]" },
+  { category: "Packaging systems", image: packagingBrand, ratio: "aspect-[4/3]" },
+  { category: "E-commerce", image: ecommerceShowcase, ratio: "aspect-square" },
+  { category: "Campaign imagery", image: campaignStorytelling, ratio: "aspect-square" },
+  { category: "Identity systems", image: identityElement, ratio: "aspect-square" },
 ];
 
 function WorkPage() {
@@ -37,14 +47,12 @@ function WorkPage() {
           <p className="col-span-10 text-lg leading-relaxed text-ink/65 md:col-span-4">Packaging, campaigns, identities, and e-commerce artwork—arranged like print proofs on a studio wall.</p>
         </section>
         <section className="columns-1 gap-6 py-16 sm:columns-2 lg:columns-3">
-          {archive.map(([category, tone, ratio], index) => (
-            <article key={category} className="mb-9 break-inside-avoid">
-              <div className={`proof-clip relative overflow-hidden ${tone} ${ratio} text-paper`}>
-                <div className="absolute inset-0 opacity-25 [background-image:repeating-linear-gradient(45deg,currentColor_0,currentColor_1px,transparent_1px,transparent_18px)]" />
-                <span className="absolute left-5 top-4 font-display text-7xl opacity-20">0{index + 1}</span>
-                <span className="absolute bottom-9 left-5 max-w-[22ch] text-xs uppercase tracking-[0.18em]">Artwork reserved for Mona’s project archive</span>
+          {archive.map(({ category, image, ratio }, index) => (
+            <article key={`${category}-${index}`} className="mb-9 break-inside-avoid">
+              <div className={`proof-clip group relative overflow-hidden bg-ink ${ratio}`}>
+                <img src={image.url} alt={`${category} design by Mona Aswal`} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
               </div>
-              <div className="mt-3 flex items-center justify-between gap-4 border-b border-ink/15 pb-3"><h2 className="font-display text-2xl">{category}</h2><span className="text-[10px] uppercase tracking-[0.18em] text-ink/45">Archive proof</span></div>
+              <div className="mt-3 flex items-center justify-between gap-4 border-b border-ink/15 pb-3"><h2 className="font-display text-2xl">{category}</h2><span className="text-[10px] uppercase tracking-[0.18em] text-ink/45">0{index + 1}</span></div>
             </article>
           ))}
         </section>
