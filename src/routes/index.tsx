@@ -1,6 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowDownRight, ArrowUpRight, Mail } from "lucide-react";
 import portraitAsset from "@/assets/mona-caricature.png.asset.json";
+import packagingMotion from "@/assets/portfolio/packaging-motion.gif.asset.json";
+import ecommerceRetail from "@/assets/portfolio/ecommerce-retail.jpg.asset.json";
+import campaignLifestyle from "@/assets/portfolio/campaign-lifestyle.jpg.asset.json";
+import identitySystem from "@/assets/portfolio/identity-system.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -41,13 +45,11 @@ function Header() {
   );
 }
 
-function Proof({ tone, index }: { tone: "coral" | "violet" | "raspberry" | "plum"; index: string }) {
-  const tones = { coral: "bg-coral", violet: "bg-violet", raspberry: "bg-raspberry", plum: "bg-plum" };
+function Proof({ image, label }: { image: { url: string }; label: string }) {
   return (
-    <div className={`proof-clip relative overflow-hidden ${tones[tone]} aspect-[4/3] text-paper`}>
-      <div className="absolute inset-0 opacity-25 [background-image:repeating-linear-gradient(45deg,currentColor_0,currentColor_1px,transparent_1px,transparent_16px)]" />
-      <span className="absolute left-5 top-5 font-display text-7xl opacity-25">{index}</span>
-      <div className="absolute bottom-8 left-5 right-5 border-t border-paper/50 pt-3 text-xs uppercase tracking-[0.2em]">Project archive · artwork coming soon</div>
+    <div className="proof-clip group relative aspect-[4/3] overflow-hidden bg-ink">
+      <img src={image.url} alt={`${label} design by Mona Aswal`} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+      <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-ink/85 to-transparent px-5 pb-5 pt-16 text-xs font-semibold uppercase tracking-[0.2em] text-paper">{label}</div>
     </div>
   );
 }
@@ -105,10 +107,10 @@ function Index() {
             <Link to="/work" className="group hidden items-center gap-2 border-b border-ink pb-1 text-xs font-semibold uppercase tracking-[0.16em] sm:flex">Open archive <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" /></Link>
           </div>
           <div className="grid grid-cols-12 items-start gap-5 sm:gap-7">
-            <div className="animate-proof col-span-12 md:col-span-7"><Proof tone="coral" index="01" /></div>
-            <div className="animate-proof col-span-10 col-start-3 md:col-span-5 md:col-start-auto md:mt-16 [animation-delay:120ms]"><Proof tone="violet" index="02" /></div>
-            <div className="animate-proof col-span-9 md:col-span-5 md:-mt-12 [animation-delay:240ms]"><Proof tone="raspberry" index="03" /></div>
-            <div className="animate-proof col-span-12 md:col-span-7 md:mt-6 [animation-delay:360ms]"><Proof tone="plum" index="04" /></div>
+            <div className="animate-proof col-span-12 md:col-span-7"><Proof image={packagingMotion} label="Packaging design" /></div>
+            <div className="animate-proof col-span-10 col-start-3 md:col-span-5 md:col-start-auto md:mt-16 [animation-delay:120ms]"><Proof image={ecommerceRetail} label="E-commerce design" /></div>
+            <div className="animate-proof col-span-9 md:col-span-5 md:-mt-12 [animation-delay:240ms]"><Proof image={campaignLifestyle} label="Campaign imagery" /></div>
+            <div className="animate-proof col-span-12 md:col-span-7 md:mt-6 [animation-delay:360ms]"><Proof image={identitySystem} label="Brand identity" /></div>
           </div>
           <Link to="/work" className="mt-8 flex items-center justify-between border-b border-ink pb-2 text-xs font-semibold uppercase tracking-[0.16em] sm:hidden">Open the full archive <ArrowUpRight className="size-4" /></Link>
         </section>

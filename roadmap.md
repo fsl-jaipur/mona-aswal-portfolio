@@ -1,5 +1,5 @@
 - [x] Build shared visual system and navigation
 - [x] Build responsive home page
 - [x] Build separate work gallery
-- [x] Add Mona portrait; keep honest placeholders until real artwork is shared
-- [ ] Verify desktop and mobile
+- [x] Add Mona portrait and real artwork recovered from her existing site
+- [x] Verify desktop and mobile
