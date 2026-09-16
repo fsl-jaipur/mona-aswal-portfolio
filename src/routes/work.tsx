@@ -24,14 +24,14 @@ export const Route = createFileRoute("/work")({
 });
 
 const archive = [
-  ["Packaging", packagingMotion, "aspect-[4/5]"],
-  ["E-commerce", ecommerceRetail, "aspect-square"],
-  ["Brand identity", identitySystem, "aspect-[5/4]"],
-  ["Campaigns", campaignLifestyle, "aspect-[3/4]"],
-  ["Packaging systems", packagingBrand, "aspect-[4/3]"],
-  ["E-commerce", ecommerceShowcase, "aspect-square"],
-  ["Campaign imagery", campaignStorytelling, "aspect-square"],
-  ["Identity systems", identityElement, "aspect-square"],
+  { category: "Packaging", image: packagingMotion, ratio: "aspect-[4/5]" },
+  { category: "E-commerce", image: ecommerceRetail, ratio: "aspect-square" },
+  { category: "Brand identity", image: identitySystem, ratio: "aspect-[5/4]" },
+  { category: "Campaigns", image: campaignLifestyle, ratio: "aspect-[3/4]" },
+  { category: "Packaging systems", image: packagingBrand, ratio: "aspect-[4/3]" },
+  { category: "E-commerce", image: ecommerceShowcase, ratio: "aspect-square" },
+  { category: "Campaign imagery", image: campaignStorytelling, ratio: "aspect-square" },
+  { category: "Identity systems", image: identityElement, ratio: "aspect-square" },
 ];
 
 function WorkPage() {
@@ -47,7 +47,7 @@ function WorkPage() {
           <p className="col-span-10 text-lg leading-relaxed text-ink/65 md:col-span-4">Packaging, campaigns, identities, and e-commerce artwork—arranged like print proofs on a studio wall.</p>
         </section>
         <section className="columns-1 gap-6 py-16 sm:columns-2 lg:columns-3">
-          {archive.map(([category, image, ratio], index) => (
+          {archive.map(({ category, image, ratio }, index) => (
             <article key={`${category}-${index}`} className="mb-9 break-inside-avoid">
               <div className={`proof-clip group relative overflow-hidden bg-ink ${ratio}`}>
                 <img src={image.url} alt={`${category} design by Mona Aswal`} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
