@@ -1,13 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, Mail } from "lucide-react";
-import packagingMotion from "@/assets/portfolio/packaging-motion.gif.asset.json";
-import packagingBrand from "@/assets/portfolio/packaging-brand.jpg.asset.json";
-import ecommerceRetail from "@/assets/portfolio/ecommerce-retail.jpg.asset.json";
-import ecommerceShowcase from "@/assets/portfolio/ecommerce-showcase.jpg.asset.json";
-import campaignLifestyle from "@/assets/portfolio/campaign-lifestyle.jpg.asset.json";
-import campaignStorytelling from "@/assets/portfolio/campaign-storytelling.jpg.asset.json";
-import identitySystem from "@/assets/portfolio/identity-system.jpg.asset.json";
-import identityElement from "@/assets/portfolio/identity-element.jpg.asset.json";
+import gummiesPackaging from "@/assets/drive-portfolio/gummies-packaging.webp.asset.json";
+import gummiesCampaign from "@/assets/drive-portfolio/gummies-campaign.webp.asset.json";
+import perfume from "@/assets/drive-portfolio/perfume-him-1.webp.asset.json";
+import revlonKajal from "@/assets/drive-portfolio/revlon-kajal.webp.asset.json";
+import revlonLipstick from "@/assets/drive-portfolio/revlon-lipstick.webp.asset.json";
+import hairSerum from "@/assets/drive-portfolio/hair-serum.webp.asset.json";
+import bodyWash from "@/assets/drive-portfolio/drsheths-bodywash.webp.asset.json";
+import professionalSkincare from "@/assets/drive-portfolio/professional-skincare.webp.asset.json";
 
 export const Route = createFileRoute("/work")({
   head: () => ({
@@ -24,14 +24,14 @@ export const Route = createFileRoute("/work")({
 });
 
 const archive = [
-  { category: "Packaging", image: packagingMotion, ratio: "aspect-[4/5]" },
-  { category: "E-commerce", image: ecommerceRetail, ratio: "aspect-square" },
-  { category: "Brand identity", image: identitySystem, ratio: "aspect-[5/4]" },
-  { category: "Campaigns", image: campaignLifestyle, ratio: "aspect-[3/4]" },
-  { category: "Packaging systems", image: packagingBrand, ratio: "aspect-[4/3]" },
-  { category: "E-commerce", image: ecommerceShowcase, ratio: "aspect-square" },
-  { category: "Campaign imagery", image: campaignStorytelling, ratio: "aspect-square" },
-  { category: "Identity systems", image: identityElement, ratio: "aspect-square" },
+  { category: "Gummies packaging", image: gummiesPackaging, ratio: "aspect-[4/3]" },
+  { category: "Revlon kajal", image: revlonKajal, ratio: "aspect-square" },
+  { category: "Hair serum", image: hairSerum, ratio: "aspect-[5/4]" },
+  { category: "Professional skincare", image: professionalSkincare, ratio: "aspect-[3/4]" },
+  { category: "Gummies campaign", image: gummiesCampaign, ratio: "aspect-video" },
+  { category: "Revlon lipstick", image: revlonLipstick, ratio: "aspect-[3/2]" },
+  { category: "Men’s fragrance", image: perfume, ratio: "aspect-video" },
+  { category: "Dr. Sheth’s body wash", image: bodyWash, ratio: "aspect-square" },
 ];
 
 function WorkPage() {
@@ -56,7 +56,7 @@ function WorkPage() {
             </article>
           ))}
         </section>
-        <section className="paper-glass border border-paper/80 p-8 text-center sm:p-14"><p className="text-xs uppercase tracking-[0.25em] text-violet">More work is being prepared</p><h2 className="mx-auto mt-4 max-w-2xl font-display text-4xl leading-tight sm:text-6xl">Want to see a project in the meantime?</h2><a href="mailto:monaaswal29@gmail.com" className="mt-8 inline-flex items-center gap-3 border-b border-ink pb-2 text-xs font-semibold uppercase tracking-[0.16em]"><Mail className="size-4" /> Ask Mona</a></section>
+        <section className="paper-glass border border-paper/80 p-8 text-center sm:p-14"><p className="text-xs uppercase tracking-[0.25em] text-violet">Explore the complete archive</p><h2 className="mx-auto mt-4 max-w-2xl font-display text-4xl leading-tight sm:text-6xl">See more of Mona’s work on Behance.</h2><div className="mt-8 flex flex-wrap items-center justify-center gap-8"><a href="https://www.behance.net/monaaswal" target="_blank" rel="noreferrer" className="border-b border-ink pb-2 text-xs font-semibold uppercase tracking-[0.16em]">Open Behance</a><a href="mailto:monaaswal29@gmail.com" className="inline-flex items-center gap-3 border-b border-ink pb-2 text-xs font-semibold uppercase tracking-[0.16em]"><Mail className="size-4" /> Ask Mona</a></div></section>
       </main>
     </div>
   );

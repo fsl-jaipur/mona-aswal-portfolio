@@ -1,5 +1,5 @@
 - [x] Build shared visual system and navigation
 - [x] Build responsive home page
 - [x] Build separate work gallery
-- [x] Add Mona portrait and real artwork recovered from her existing site
+- [x] Add Mona portrait and replace recovered site visuals with artwork from her shared Google Drive
 - [x] Verify desktop and mobile
