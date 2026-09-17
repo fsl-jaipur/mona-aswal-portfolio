@@ -1,10 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowDownRight, ArrowUpRight, Mail } from "lucide-react";
 import portraitAsset from "@/assets/mona-caricature.png.asset.json";
-import packagingMotion from "@/assets/portfolio/packaging-motion.gif.asset.json";
-import ecommerceRetail from "@/assets/portfolio/ecommerce-retail.jpg.asset.json";
-import campaignLifestyle from "@/assets/portfolio/campaign-lifestyle.jpg.asset.json";
-import identitySystem from "@/assets/portfolio/identity-system.jpg.asset.json";
+import gummiesPackaging from "@/assets/drive-portfolio/gummies-packaging.webp.asset.json";
+import revlonKajal from "@/assets/drive-portfolio/revlon-kajal.webp.asset.json";
+import hairSerum from "@/assets/drive-portfolio/hair-serum.webp.asset.json";
+import professionalSkincare from "@/assets/drive-portfolio/professional-skincare.webp.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -107,10 +107,10 @@ function Index() {
             <Link to="/work" className="group hidden items-center gap-2 border-b border-ink pb-1 text-xs font-semibold uppercase tracking-[0.16em] sm:flex">Open archive <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" /></Link>
           </div>
           <div className="grid grid-cols-12 items-start gap-5 sm:gap-7">
-            <div className="animate-proof col-span-12 md:col-span-7"><Proof image={packagingMotion} label="Packaging design" /></div>
-            <div className="animate-proof col-span-10 col-start-3 md:col-span-5 md:col-start-auto md:mt-16 [animation-delay:120ms]"><Proof image={ecommerceRetail} label="E-commerce design" /></div>
-            <div className="animate-proof col-span-9 md:col-span-5 md:-mt-12 [animation-delay:240ms]"><Proof image={campaignLifestyle} label="Campaign imagery" /></div>
-            <div className="animate-proof col-span-12 md:col-span-7 md:mt-6 [animation-delay:360ms]"><Proof image={identitySystem} label="Brand identity" /></div>
+            <div className="animate-proof col-span-12 md:col-span-7"><Proof image={gummiesPackaging} label="Gummies packaging" /></div>
+            <div className="animate-proof col-span-10 col-start-3 md:col-span-5 md:col-start-auto md:mt-16 [animation-delay:120ms]"><Proof image={revlonKajal} label="Revlon kajal campaign" /></div>
+            <div className="animate-proof col-span-9 md:col-span-5 md:-mt-12 [animation-delay:240ms]"><Proof image={hairSerum} label="Hair serum campaign" /></div>
+            <div className="animate-proof col-span-12 md:col-span-7 md:mt-6 [animation-delay:360ms]"><Proof image={professionalSkincare} label="Professional skincare" /></div>
           </div>
           <Link to="/work" className="mt-8 flex items-center justify-between border-b border-ink pb-2 text-xs font-semibold uppercase tracking-[0.16em] sm:hidden">Open the full archive <ArrowUpRight className="size-4" /></Link>
         </section>
