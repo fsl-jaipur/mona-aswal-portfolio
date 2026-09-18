@@ -166,6 +166,7 @@
 @keyframes letter-shift { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-0.06em) rotate(-1deg); } }
 @keyframes paper-drift { 0%, 100% { transform: translateY(0) rotate(-7deg); } 50% { transform: translateY(-14px) rotate(-4deg); } }
 @keyframes reveal-proof { from { opacity: 0; transform: translateY(24px) rotate(1deg); } to { opacity: 1; transform: translateY(0) rotate(0); } }
+@keyframes tool-arrive { from { opacity: 0; transform: translateY(10px) scale(.94); } to { opacity: .55; transform: translateY(0) scale(1); } }
 
 @utility paper-glass {
   background: linear-gradient(135deg, color-mix(in oklab, white 68%, transparent), color-mix(in oklab, white 20%, transparent));
@@ -190,6 +191,10 @@
 
 @utility animate-proof {
   animation: reveal-proof 0.8s cubic-bezier(.2,.7,.2,1) both;
+}
+
+@utility animate-tool-logo {
+  animation: tool-arrive 0.55s cubic-bezier(.2,.7,.2,1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {

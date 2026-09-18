@@ -5,6 +5,12 @@ import gummiesPackaging from "@/assets/drive-portfolio/gummies-packaging.webp.as
 import revlonKajal from "@/assets/drive-portfolio/revlon-kajal.webp.asset.json";
 import hairSerum from "@/assets/drive-portfolio/hair-serum.webp.asset.json";
 import professionalSkincare from "@/assets/drive-portfolio/professional-skincare.webp.asset.json";
+import illustratorLogo from "@/assets/tool-logos/illustrator.svg";
+import photoshopLogo from "@/assets/tool-logos/photoshop.svg";
+import indesignLogo from "@/assets/tool-logos/indesign.svg";
+import figmaLogo from "@/assets/tool-logos/figma.svg";
+import afterEffectsLogo from "@/assets/tool-logos/after-effects.svg";
+import corelDrawLogo from "@/assets/tool-logos/coreldraw.svg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -33,6 +39,15 @@ const career = [
   ["2021—22", "Graphic Designer", "Revlon"],
   ["2022—23", "Senior Graphic Designer", "Honasa Consumer Pvt. Ltd."],
   ["2023—Now", "Assistant Manager, Design & Brand Lead", "Esme Consumer Pvt. Ltd."],
+];
+
+const tools = [
+  { name: "Illustrator", logo: illustratorLogo },
+  { name: "Photoshop", logo: photoshopLogo },
+  { name: "InDesign", logo: indesignLogo },
+  { name: "Figma", logo: figmaLogo },
+  { name: "After Effects", logo: afterEffectsLogo },
+  { name: "CorelDRAW", logo: corelDrawLogo },
 ];
 
 function Header() {
@@ -99,7 +114,23 @@ function Index() {
         <section className="mx-auto max-w-[1500px] px-5 py-20 sm:px-8 lg:px-14">
           <div className="paper-glass -rotate-1 border border-paper/70 p-7 shadow-[12px_14px_0_color-mix(in_oklab,var(--violet)_18%,transparent)] sm:p-10">
             <p className="text-xs uppercase tracking-[0.28em] text-violet">Tools / Typographic inventory</p>
-            <p className="mt-5 font-display text-3xl leading-[1.18] sm:text-5xl">Illustrator <span className="text-plum">/</span> Photoshop <span className="text-plum">/</span> InDesign <span className="text-plum">/</span> Figma <span className="text-plum">/</span> After Effects <span className="text-plum">/</span> CorelDRAW</p>
+            <ul className="mt-7 grid grid-cols-2 border-l border-t border-ink/12 sm:grid-cols-3 lg:grid-cols-6">
+              {tools.map((tool, index) => (
+                <li
+                  key={tool.name}
+                  className="group flex min-h-36 flex-col items-center justify-center gap-4 border-b border-r border-ink/12 px-3 py-6 text-center"
+                >
+                  <img
+                    src={tool.logo}
+                    alt=""
+                    aria-hidden="true"
+                    className="animate-tool-logo size-12 object-contain opacity-55 grayscale transition-[filter,opacity,transform] duration-500 ease-out group-hover:-translate-y-1 group-hover:opacity-100 group-hover:grayscale-0 sm:size-14"
+                    style={{ animationDelay: `${index * 80}ms` }}
+                  />
+                  <span className="text-xs font-semibold uppercase text-ink/70 transition-colors duration-300 group-hover:text-plum sm:text-sm">{tool.name}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="mb-10 mt-28 flex items-end justify-between gap-5">
