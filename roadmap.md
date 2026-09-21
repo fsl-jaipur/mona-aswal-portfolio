@@ -5,7 +5,6 @@
 - [x] Verify desktop and mobile
 - [x] Add About page with verified résumé content and CV download
 - [x] Add Contact page with real phone, email, Behance, and enquiry fallback
-- [x] Add Testimonials page shell pending approved quotes
+- [x] Add Testimonials page with approved quotes, attribution, and profile photos
 - [x] Add shared navigation across portfolio pages
 - [ ] Activate direct enquiry delivery — blocked until a sender domain is available
-- [ ] Populate testimonials — blocked until approved quotes and attribution are provided
