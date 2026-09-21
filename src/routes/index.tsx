@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowDownRight, ArrowUpRight, Mail } from "lucide-react";
+import { SiteHeader } from "@/components/site-header";
 import portraitAsset from "@/assets/mona-caricature.png.asset.json";
 import gummiesPackaging from "@/assets/drive-portfolio/gummies-packaging.webp.asset.json";
 import revlonKajal from "@/assets/drive-portfolio/revlon-kajal.webp.asset.json";
@@ -50,16 +51,6 @@ const tools = [
   { name: "CorelDRAW", logo: corelDrawLogo },
 ];
 
-function Header() {
-  return (
-    <header className="relative z-30 flex items-center justify-between px-5 py-5 text-[10px] font-semibold uppercase tracking-[0.22em] text-ink/65 sm:px-8 lg:px-14">
-      <Link to="/" className="focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet">Mona Aswal — Folio 08</Link>
-      <span className="hidden md:block">FMCG · E-commerce · Branding</span>
-      <Link to="/work" className="group flex items-center gap-2 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet">View work <ArrowUpRight className="size-3 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></Link>
-    </header>
-  );
-}
-
 function Proof({ image, label }: { image: { url: string }; label: string }) {
   return (
     <div className="proof-clip group relative aspect-[4/3] overflow-hidden bg-ink">
@@ -72,7 +63,7 @@ function Proof({ image, label }: { image: { url: string }; label: string }) {
 function Index() {
   return (
     <div className="min-h-screen overflow-x-hidden text-ink">
-      <Header />
+      <SiteHeader />
       <main>
         <section className="relative mx-auto grid min-h-[calc(100svh-72px)] max-w-[1600px] grid-cols-12 items-center gap-4 px-5 pb-16 pt-8 sm:px-8 lg:gap-8 lg:px-14 lg:pb-20">
           <div aria-hidden="true" className="paper-glass animate-paper absolute -left-24 top-24 h-[28rem] w-56 border border-paper/80" />
@@ -156,7 +147,7 @@ function Index() {
         </section>
 
         <section className="ink-slab -rotate-1 px-5 py-20 text-paper sm:px-8 lg:px-14">
-          <div className="mx-auto max-w-[1500px]"><p className="text-xs uppercase tracking-[0.28em] text-paper/65">Have a brief worth unfolding?</p><h2 className="mt-4 max-w-4xl font-display text-5xl leading-none sm:text-7xl lg:text-8xl">Let’s make it impossible to ignore.</h2><a href="mailto:monaaswal29@gmail.com" className="mt-9 inline-flex items-center gap-3 border-b border-paper/60 pb-2 text-sm font-semibold uppercase tracking-[0.16em] hover:border-paper"><Mail className="size-4" /> monaaswal29@gmail.com</a></div>
+          <div className="mx-auto max-w-[1500px]"><p className="text-xs uppercase tracking-[0.28em] text-paper/65">Have a brief worth unfolding?</p><h2 className="mt-4 max-w-4xl font-display text-5xl leading-none sm:text-7xl lg:text-8xl">Let’s make it impossible to ignore.</h2><div className="mt-9 flex flex-wrap gap-7"><Link to="/contact" className="inline-flex items-center gap-3 border-b border-paper/60 pb-2 text-sm font-semibold uppercase tracking-[0.16em] hover:border-paper"><Mail className="size-4" /> Start an enquiry</Link><a href="tel:+919599828836" className="border-b border-paper/60 pb-2 text-sm font-semibold uppercase tracking-[0.16em] hover:border-paper">+91 95998 28836</a></div></div>
         </section>
       </main>
       <footer className="flex flex-wrap items-center justify-between gap-3 px-5 py-8 text-[10px] uppercase tracking-[0.18em] text-ink/48 sm:px-8 lg:px-14"><span>Mona Aswal — Folio 08</span><span>Designed with intent · 2026</span></footer>
