@@ -12,6 +12,7 @@ const testimonials = [
     role: "Senior Product Marketing Manager",
     company: "Times Internet",
     image: shikhaPhoto.url,
+    delay: "delay-0",
     quote: "A great peer to work with that’s how I define Mona. She has deep understanding of graphic designing and user experience and have worked as an asset to the company. I wish her all the best for her future projects.",
   },
   {
@@ -19,6 +20,7 @@ const testimonials = [
     role: "Freelance Writer",
     company: "Ritu Writes",
     image: rituPhoto.url,
+    delay: "delay-100",
     quote: "I have worked with Mona for a brief period and I must say that she has a very creative bend of mind and is a very quick and fast learner. She understands her clients requirements and this makes her stand out from the crowd. I would highly recommend Mona as a graphic designer as she is highly professional when it comes to work. Keep on going and touching new life heights.",
   },
   {
@@ -26,6 +28,7 @@ const testimonials = [
     role: "Entrepreneur",
     company: "",
     image: abhishekPhoto.url,
+    delay: "delay-200",
     quote: "Mona worked at too many project as a graphic designer. Her work was used for internal projects and deliverables alike. she has always demonstrated a professional competency & diligent work efforts. She would serve as a great addition to any organization.",
   },
   {
@@ -33,6 +36,7 @@ const testimonials = [
     role: "Founder",
     company: "Om Vortex",
     image: vikramPhoto.url,
+    delay: "delay-300",
     quote: "Mona gives thoughtful feedback on design, encourages others to do their best, and has highly creative vision. Her creative design is always top notch and with the quickest possible turnaround.",
   },
 ];
@@ -65,8 +69,7 @@ function TestimonialsPage() {
           {testimonials.map((testimonial, index) => (
             <article
               key={testimonial.name}
-              className={`paper-glass animate-proof relative col-span-12 border border-paper/80 p-7 shadow-[10px_12px_0_var(--plum)] sm:p-9 md:col-span-6 ${index % 2 === 1 ? "md:translate-y-14" : ""}`}
-              style={{ animationDelay: `${index * 100}ms` }}
+              className={`paper-glass animate-proof relative col-span-12 border border-paper/80 p-7 shadow-[10px_12px_0_var(--plum)] sm:p-9 md:col-span-6 ${testimonial.delay} ${index % 2 === 1 ? "md:translate-y-14" : ""}`}
             >
               <Quote aria-hidden="true" className="size-9 text-coral" />
               <blockquote className="mt-6 font-display text-2xl leading-snug sm:text-3xl">“{testimonial.quote}”</blockquote>
