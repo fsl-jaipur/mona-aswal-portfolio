@@ -58,20 +58,26 @@ const tools = [
   { name: "CorelDRAW", logo: corelDrawLogo },
 ];
 
-const firstName = [
+type AnimatedLetter = {
+  letter: string;
+  jump: boolean;
+  accent?: "coral" | "violet";
+};
+
+const firstName: AnimatedLetter[] = [
   { letter: "M", jump: false },
   { letter: "o", jump: true, accent: "coral" },
   { letter: "n", jump: false },
   { letter: "a", jump: true, accent: "violet" },
-] as const;
+];
 
-const lastName = [
+const lastName: AnimatedLetter[] = [
   { letter: "A", jump: true, accent: "coral" },
   { letter: "s", jump: false },
   { letter: "w", jump: true, accent: "violet" },
   { letter: "a", jump: false },
   { letter: "l", jump: true, accent: "coral" },
-] as const;
+];
 
 function Proof({ image, label }: { image: { url: string }; label: string }) {
   return (

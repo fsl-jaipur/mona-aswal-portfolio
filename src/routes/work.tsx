@@ -26,7 +26,9 @@ export const Route = createFileRoute("/work")({
   component: WorkPage,
 });
 
-const archive = [
+type WorkCategory = (typeof filters)[number];
+
+const archive: Array<{ title: string; categories: WorkCategory[]; image: { url: string }; ratio: string }> = [
   { title: "Gummies packaging", categories: ["Packaging", "FMCG"], image: gummiesPackaging, ratio: "aspect-[4/3]" },
   { title: "Revlon kajal", categories: ["E-commerce", "Beauty"], image: revlonKajal, ratio: "aspect-square" },
   { title: "Hair serum", categories: ["Campaigns", "Haircare"], image: hairSerum, ratio: "aspect-[5/4]" },
