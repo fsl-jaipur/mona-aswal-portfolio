@@ -58,6 +58,27 @@ const tools = [
   { name: "CorelDRAW", logo: corelDrawLogo },
 ];
 
+type AnimatedLetter = {
+  letter: string;
+  jump: boolean;
+  accent?: "coral" | "violet";
+};
+
+const firstName: AnimatedLetter[] = [
+  { letter: "M", jump: false },
+  { letter: "o", jump: true, accent: "coral" },
+  { letter: "n", jump: false },
+  { letter: "a", jump: true, accent: "violet" },
+];
+
+const lastName: AnimatedLetter[] = [
+  { letter: "A", jump: true, accent: "coral" },
+  { letter: "s", jump: false },
+  { letter: "w", jump: true, accent: "violet" },
+  { letter: "a", jump: false },
+  { letter: "l", jump: true, accent: "coral" },
+];
+
 function Proof({ image, label }: { image: { url: string }; label: string }) {
   return (
     <div className="proof-clip group relative aspect-[4/3] overflow-hidden bg-ink">
@@ -94,18 +115,26 @@ function Index() {
             </p>
             <h1 className="font-display leading-[0.78] text-ink">
               <span className="block text-[29vw] sm:text-[24vw] md:text-[13vw] lg:text-[11rem]">
-                {"Mona".split("").map((letter, index) => (
+                {firstName.map(({ letter, jump, accent }, index) => (
                   <span
                     key={letter + index}
-                    className="animate-letter inline-block"
-                    style={{ animationDelay: `${index * 90}ms` }}
+                    className={`inline-block ${jump ? `animate-letter-jump ${accent === "coral" ? "letter-accent-coral" : "letter-accent-violet"}` : "animate-letter"}`}
+                    style={{ animationDelay: `${index * 130}ms` }}
                   >
                     {letter}
                   </span>
                 ))}
               </span>
               <span className="block text-[20vw] italic text-plum sm:text-[17vw] md:text-[9vw] lg:text-[8rem]">
-                Aswal
+                {lastName.map(({ letter, jump, accent }, index) => (
+                  <span
+                    key={letter + index}
+                    className={`inline-block ${jump ? `animate-letter-jump ${accent === "coral" ? "letter-accent-coral" : "letter-accent-violet"}` : "animate-letter"}`}
+                    style={{ animationDelay: `${520 + index * 130}ms` }}
+                  >
+                    {letter}
+                  </span>
+                ))}
               </span>
             </h1>
             <p className="mt-8 max-w-[43ch] text-lg leading-relaxed text-ink/72 sm:text-xl">

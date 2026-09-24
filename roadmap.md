@@ -7,4 +7,7 @@
 - [x] Add Contact page with real phone, email, Behance, and enquiry fallback
 - [x] Add Testimonials page with approved quotes, attribution, and profile photos
 - [x] Add shared navigation across portfolio pages
+- [x] Add jumping accent letters to Mona's name
+- [x] Add a subtle caricature cursor follower on pointer devices
+- [x] Expand and filter the work gallery by design categories
 - [ ] Activate direct enquiry delivery — blocked until a sender domain is available
