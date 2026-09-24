@@ -22,7 +22,7 @@ export function PortraitCursor() {
       current.x += (target.x - current.x) * 0.16;
       current.y += (target.y - current.y) * 0.16;
       if (followerRef.current) {
-        followerRef.current.style.transform = `translate3d(${current.x}px, ${current.y}px, 0) translate(-50%, -50%)`;
+        followerRef.current.style.transform = `translate3d(${current.x + 20}px, ${current.y + 20}px, 0)`;
       }
       frame = window.requestAnimationFrame(animate);
     };

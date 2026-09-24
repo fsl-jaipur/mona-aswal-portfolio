@@ -118,7 +118,7 @@ function Index() {
                 {firstName.map(({ letter, jump, accent }, index) => (
                   <span
                     key={letter + index}
-                    className={`inline-block ${jump ? `animate-letter-jump letter-accent-${accent}` : "animate-letter"}`}
+                    className={`inline-block ${jump ? `animate-letter-jump ${accent === "coral" ? "letter-accent-coral" : "letter-accent-violet"}` : "animate-letter"}`}
                     style={{ animationDelay: `${index * 130}ms` }}
                   >
                     {letter}
@@ -129,7 +129,7 @@ function Index() {
                 {lastName.map(({ letter, jump, accent }, index) => (
                   <span
                     key={letter + index}
-                    className={`inline-block ${jump ? `animate-letter-jump letter-accent-${accent}` : "animate-letter"}`}
+                    className={`inline-block ${jump ? `animate-letter-jump ${accent === "coral" ? "letter-accent-coral" : "letter-accent-violet"}` : "animate-letter"}`}
                     style={{ animationDelay: `${520 + index * 130}ms` }}
                   >
                     {letter}
