@@ -26,7 +26,9 @@ export const Route = createFileRoute("/work")({
   component: WorkPage,
 });
 
-type WorkCategory = (typeof filters)[number];
+const filters = ["All", "Packaging", "E-commerce", "Campaigns", "Branding", "Beauty", "Skincare", "FMCG", "Haircare", "Fragrance"] as const;
+
+type WorkCategory = Exclude<(typeof filters)[number], "All">;
 
 const archive: Array<{ title: string; categories: WorkCategory[]; image: { url: string }; ratio: string }> = [
   { title: "Gummies packaging", categories: ["Packaging", "FMCG"], image: gummiesPackaging, ratio: "aspect-[4/3]" },
@@ -38,8 +40,6 @@ const archive: Array<{ title: string; categories: WorkCategory[]; image: { url: 
   { title: "Men’s fragrance", categories: ["Branding", "Fragrance"], image: perfume, ratio: "aspect-video" },
   { title: "Dr. Sheth’s body wash", categories: ["Packaging", "Skincare"], image: bodyWash, ratio: "aspect-square" },
 ];
-
-const filters = ["All", "Packaging", "E-commerce", "Campaigns", "Branding", "Beauty", "Skincare", "FMCG", "Haircare", "Fragrance"] as const;
 
 function WorkPage() {
   const [activeFilter, setActiveFilter] = useState<(typeof filters)[number]>("All");
